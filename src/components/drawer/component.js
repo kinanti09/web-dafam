@@ -5,17 +5,20 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ArrowIcon from '@material-ui/icons/KeyboardArrowLeft';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ApartmentIcon from '@material-ui/icons/Apartment';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import Selects from '../component';
 
 const drawerWidth = 240;
 
@@ -31,6 +34,8 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    height: 73,
+    backgroundColor: '#304C7A'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -39,12 +44,14 @@ const useStyles = makeStyles(theme => ({
     },
   },
   toolbar: theme.mixins.toolbar,
+  backgroundColor: '#e0e0e0',
   drawerPaper: {
     width: drawerWidth,
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    
   },
   closeMenuButton: {
     marginRight: 'auto',
@@ -64,13 +71,51 @@ function Component(props) {
 
   const drawer = (
     <div>
-      <List>
+      {/* <List>
         {['Dashboard', 'Reports', 'Setting', 'Hotel List'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
+      </List> */}
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Dashboard
+          </ListItemText>
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Reports
+          </ListItemText>
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Settings
+          </ListItemText>
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon>
+            <ApartmentIcon />
+          </ListItemIcon>
+          <ListItemText>
+            Hotel List
+          </ListItemText>
+        </ListItem>
+
       </List>
     </div>
   );
@@ -92,6 +137,7 @@ function Component(props) {
           <Typography variant="h6" noWrap>
             Responsive drawer
           </Typography>
+          <Selects />
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>

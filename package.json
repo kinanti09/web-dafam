@@ -5,10 +5,14 @@
   "dependencies": {
     "@material-ui/core": "^4.5.0",
     "@material-ui/icons": "^4.4.3",
+    "axios": "^0.19.0",
+    "faker": "^4.1.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "yarn": "^1.19.0"
+    "recharts": "^1.7.1",
+    "yarn": "^1.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
