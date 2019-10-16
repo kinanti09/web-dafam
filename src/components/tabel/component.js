@@ -48,8 +48,8 @@ class Component extends React.Component{
         let datas = this.state.datas;
         return(
             <div>
-                <form ref="myForm">
-                    <TextField
+                <form align="right" ref="myForm">
+                <TextField
                         ref="name"
                         id="outlined-bare"
                         className={classes.textField}
@@ -83,22 +83,22 @@ class Component extends React.Component{
                 <Paper className={classes.root}>
                     <Table className={classes.table}>
                         <TableHead>
-                            <TableRow>
+                            <TableRow color="">
                                 <TableCell>Nama</TableCell>
                                 <TableCell align="right">Alamat</TableCell>
-                                <TableCell align="right">Umur</TableCell>
+                                {/* <TableCell align="right">Umur</TableCell> */}
                                 <TableCell align="center">Action</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                                <TableRow>
-                                    {datas.map((data, i) =>
-                                       <TableCell align="right" key={i}>
-                                           {i+1}. {data.name}, {data.address}
-                                           <Button style={{marginLeft:5}} size="small" variant="outlined" color="secondary" className={classes.button} onClick={()=>this.fRemove(i)}>Remove</Button>
-                                           <Button style={{marginRight:5}} size="small" variant="contained" color="primary" className={classes.button} onClick={()=>this.fEdite(i)}>Edit</Button>
-                                       </TableCell> 
-                                        )}
+                            <TableRow>
+                                {datas.map((data, i) =>
+                                   <TableCell align="right" key={i}>
+                                       {i+1}. {data.name}, {data.address}
+                                       <Button style={{marginLeft:5}} size="small" variant="outlined" color="secondary" className={classes.button} onClick={()=>this.fRemove(i)}>Remove</Button>
+                                       <Button style={{marginRight:5}} size="small" variant="contained" color="primary" className={classes.button} onClick={()=>this.fEdite(i)}>Edit</Button>
+                                   </TableCell> 
+                                    )}
                                     {/* <TableCell component="th" scope="row">
                                     </TableCell>
                                     <TableCell align="right"></TableCell>

@@ -1,3 +1,6 @@
+import { withStyles } from '@material-ui/core/styles';
 import Component from './component';
+import styles from './styles';
 
-export default Component;
+const Styled = withStyles(styles)(Component);
+export default Styled;
