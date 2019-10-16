@@ -4,7 +4,7 @@ import Chart from '../../components/chart';
 class Dashboard extends React.Component{
     render(){
         return(
-            <div>
+            <div color="E0E0E0">
                 <h1>Dashboard</h1>
                 <Chart />
             </div>

@@ -1,9 +1,15 @@
 import React from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart,
+  Bar, 
+  XAxis, 
+  YAxis, 
+  CartesianGrid, 
+  Tooltip, 
+  Legend,
+
 } from 'recharts';
-
-
+import Paper from '@material-ui/core/Paper';
 
 const data = [
   {
@@ -25,9 +31,12 @@ const data = [
 
 export default class Chart extends React.Component {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
+  
 
   render() {
+    const { classes } = this.props;
     return (
+      <Paper className={classes.paper}>
       <BarChart
         width={800}
         height={300}
@@ -45,6 +54,7 @@ export default class Chart extends React.Component {
         <Bar dataKey="uv" fill="#00E676" />
         <Bar dataKey="uv" fill="#FBC02D" />
       </BarChart>
+      </Paper>
     );
   }
 }
